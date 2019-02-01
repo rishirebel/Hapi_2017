@@ -292,10 +292,7 @@ let APP_CONSTANTS = {
     swaggerDefaultResponseMessages: swaggerDefaultResponseMessages,
     SCOPE: SCOPE,
     DATABASE_CONSTANT: DATABASE_CONSTANT,
-    DATABASE: DATABASE,
-    notificationMessages: notificationMessages,
-    STANDARDHEADER: STANDARDHEADER,
-    STANDARDFOOTER: STANDARDFOOTER
+    DATABASE: DATABASE
 };
 
 module.exports = APP_CONSTANTS;
