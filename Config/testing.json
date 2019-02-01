@@ -1,0 +1,11 @@
+{
+  "host": "localhost",
+  "port": "8001",
+  "mongoDb": {
+    "URI": "mongodb://username:password@localhost:27017/collection_name",
+    "PORT": "27017"
+  },
+  "panel_link": "",
+  "reset_password_link": "",
+  "verification_link": ""
+}

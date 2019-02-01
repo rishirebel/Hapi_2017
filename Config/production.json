@@ -1,0 +1,24 @@
+{
+  "host": "localhost",
+  "port": "8002",
+  "mongoDb": {
+    "URI": "mongodb://usename:password@localhost:27017/collection_name",
+    "PORT": "27017"
+  },
+  "s3BucketCredentials": {
+    "bucket": "usename",
+    "accessKeyId": "xyz",
+    "secretAccessKey": "xyz",
+    "s3URL": "https://s3-us-west-2.amazonaws.com/xyz",
+    "folder": {
+      "original": "original",
+      "thumbnail": "thumbnail",
+      "processed": "processed",
+      "thumbnail1080": "thumbnail1080",
+      "thumbnailMed": "thumbnailMed"
+    }
+  },
+  "panel_link": "",
+  "reset_password_link": "",
+  "verification_link": ""
+}
