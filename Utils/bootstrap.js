@@ -7,12 +7,10 @@ let mongoose = require('mongoose'),
 
 mongoose.Promise = Promise;
 
-console.log(process.env.NODE_ENV);
+console.log(process.env);
 
-
-console.log("process.env.NODE_ENV=========================process.env.NODE_ENV==============", 'mongodb://massago-2-user:SMefVrWovOfK@localhost/massago2');
 //Connect to MongoDB
-mongoose.connect('mongodb://massago-2-user:SMefVrWovOfK@localhost/massago2', {}).then(success => {
+mongoose.connect('mongodb://user:password@localhost/dummy', {}).then(success => {
     winston.info('MongoDB Connected');
     //run();
 }).catch(err => {

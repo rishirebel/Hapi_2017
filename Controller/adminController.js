@@ -4,7 +4,6 @@
 let DAO = require('../DAOManager').queries,
     Config = require('../Config'),
     TokenManager = require('../Libs/tokenManager'),
-    NotificationManager = require('../Libs/notificationManager'),
     emailManager = require('../Libs/emailManager'),
     ERROR = Config.responseMessages.ERROR,
     Models = require('../Models/'),

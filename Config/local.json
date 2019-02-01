@@ -2,7 +2,7 @@
   "host": "localhost",
   "port": "8002",
   "mongoDb": {
-    "URI": "mongodb://usename:password@localhost:27017/collection_name",
+    "URI": "mongodb://user:password@localhost:27017/dummy",
     "PORT": "27017"
   },
   "s3BucketCredentials": {

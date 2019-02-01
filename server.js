@@ -5,9 +5,8 @@ const Hapi = require('hapi'),
     Config = require('./Config'),
     Plugins = require('./Plugins'),
     mongoose = require('mongoose'),
-    redis = require('async-redis'),
-    redisClient = redis.createClient({host: 'localhost', port: 6379}),
     socketManager = require('./Libs/socketManager'),
+     HapiSwagger = require('hapi-swagger'),
     fs = require('fs');
 
 
@@ -19,21 +18,21 @@ var Http2 = require('http2');
 
 
 let listener = Http2.createServer({
-    key: fs.readFileSync('./server.key'),
-    cert: fs.readFileSync('./server.crt')
+    // key: fs.readFileSync('./server.key'),
+    // cert: fs.readFileSync('./server.crt')
 })
 
-if (process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'testing' && process.env.NODE_ENV !== 'client' && process.env.NODE_ENV !== 'production') {
-    console.log(
-        `Please specify one of the following environments to run your server
-            - development
-            - production
-         Example :NODE_ENV=development pm2 start server.js --log-date-format 'DD-MM HH:mm:ss.SSS' --name="dev"`
-    );
-
-} else {
+// if (process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'testing' && process.env.NODE_ENV !== 'client' && process.env.NODE_ENV !== 'production') {
+//     console.log(
+//         `Please specify one of the following environments to run your server
+//             - development
+//             - production
+//          Example :NODE_ENV=development pm2 start server.js --log-date-format 'DD-MM HH:mm:ss.SSS' --name="dev"`
+//     );
+//
+// } else {
     process.env.NODE_ENV = 'local';
-}
+// }
 
 
 const Routes = require('./Routes');
@@ -53,6 +52,7 @@ let server = new Hapi.Server({
         cors: true
     }
 });
+console.log("dskbckhadbjkfbadkjb",Config[process.env.NODE_ENV].port);
 
 
 (async initServer => {
@@ -98,28 +98,20 @@ let server = new Hapi.Server({
         winston.log("info", `onPostAuth`);
         return h.continue;
     })
-
     // Start Server
     try {
         await server.start();
-        redisClient.on('ready', function () {
-            console.log("Redis is ready");
-        });
+        // redisClient.on('ready', function () {
+        //     console.log("Redis is ready");
+        // });
+        //
+        // redisClient.on('error', function () {
+        //     console.log("Error in Redis");
+        // });
 
-        redisClient.on('error', function () {
-            console.log("Error in Redis");
-        });
-
-        await socketManager.connectSocket(server, redisClient);
+        // await socketManager.connectSocket(server, redisClient);
         winston.log("info", `Server running at ${server.info.uri}`);
     } catch (error) {
         winston.log("info", error);
     }
 })();
-
-
-// process.stdout.write("I will goto the STDOUT");
-// process.stderr.write("I will goto the STDERR");
-
-
-//radis Connection
