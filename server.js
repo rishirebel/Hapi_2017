@@ -101,15 +101,6 @@ console.log("dskbckhadbjkfbadkjb",Config[process.env.NODE_ENV].port);
     // Start Server
     try {
         await server.start();
-        // redisClient.on('ready', function () {
-        //     console.log("Redis is ready");
-        // });
-        //
-        // redisClient.on('error', function () {
-        //     console.log("Error in Redis");
-        // });
-
-        // await socketManager.connectSocket(server, redisClient);
         winston.log("info", `Server running at ${server.info.uri}`);
     } catch (error) {
         winston.log("info", error);
