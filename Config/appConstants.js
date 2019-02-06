@@ -1,7 +1,7 @@
 'use strict';
 let SERVER = {
-    APP_NAME: 'Sanctuary Upgradation Code',
-    SECRET: "#DubaIIeOkCfGdHahSHHSh",
+    APP_NAME: 'Your App name',
+    SECRET: "your hash",
     SALT: 11,
     JWT_SECRET_KEY_Supplier: "#GD%$HFD&&$DFDKI12~#^%&*+_->?L%QF",
     JWT_SECRET_KEY_ADMIN: "#GD%$HFD&&$DFDKI12~#^%&*+_->?L%QF",
